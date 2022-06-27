@@ -27,16 +27,19 @@ package ro.ciacob.maidens.generators {
 		 * Set pitch to `0` to define a rest (MIDI note 0 represents a pitch too low
 		 * for humans to hear it, therefore you wouldn't use it anyway).
 		 */
-		public function MusicEntry(pitch:int = 0, duration:Fraction = null, tie:Boolean = false) {
+		public function MusicEntry(pitch:int = 0, duration:Fraction = null, tie:Boolean = false,
+								   annotation : String = null) {
 			_uid = Strings.generateUniqueId(UIDS_POOL);
 			this.pitch = pitch;
 			this.duration = duration;
 			this.tie = tie;
+			this.annotation = annotation;
 		}
 
 		private var _duration:Fraction = QUARTER;
 		private var _pitch:int = MIDDLE_C;
 		private var _tie:Boolean;
+		private var _annotation:String;
 		private var _uid:String;
 
 		public function get duration():Fraction {
@@ -67,6 +70,14 @@ package ro.ciacob.maidens.generators {
 
 		public function set tie(value:Boolean):void {
 			_tie = value;
+		}
+
+		public function get annotation():String {
+			return _annotation;
+		}
+
+		public function set annotation(value : String):void {
+			_annotation = value;
 		}
 
 		public function toString():String {
