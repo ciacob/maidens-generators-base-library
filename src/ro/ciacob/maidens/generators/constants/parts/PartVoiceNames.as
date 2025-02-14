@@ -34,6 +34,10 @@ package ro.ciacob.maidens.generators.constants.parts {
 		public static const CHOIR_3:Array = ['Soprano', 'Alto', 'Tenor/Bass '];
 		public static const CHOIR_4:Array = ['Soprano', 'Alto', 'Tenor', 'Bass'];
 
+		// Vibraphone
+		public static const VIBRAPHONE:Array = [ 'Vibraphone' ];
+		public static const VIBRAPHONE_2:Array = [ '(Vibraphone) Right Hand', 'Left Hand' ];
+
 		public static function getNames(partName:String, numStaves : int = -1) : Array {
 			partName = Strings.toAS3ConstantCase(partName);
 			if (numStaves != -1) {
